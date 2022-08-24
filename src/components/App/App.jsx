@@ -42,16 +42,18 @@ export class App extends Component {
   }
 
   componentDidMount(){
-    console.log('App Component Did mount');
+   // console.log('App Component Did mount');
     
     const contactsFromLocal = localStorage.getItem('contacts');
+    if(contactsFromLocal !== null){
     const prsedcontactsFromLocal = JSON.parse(contactsFromLocal);
-    // console.log(prsedcontactsFromLocal);
+     //console.log(prsedcontactsFromLocal.length);
 
     if (prsedcontactsFromLocal.length > 0){
       // console.log('Take contact from LocalStorage');
       // console.log(prsedcontactsFromLocal);
       this.setState({contacts: prsedcontactsFromLocal})
+    }
     }
   }
 
