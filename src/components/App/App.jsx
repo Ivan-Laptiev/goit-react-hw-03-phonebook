@@ -46,21 +46,21 @@ export class App extends Component {
     
     const contactsFromLocal = localStorage.getItem('contacts');
     const prsedcontactsFromLocal = JSON.parse(contactsFromLocal);
-    console.log(prsedcontactsFromLocal);
+    // console.log(prsedcontactsFromLocal);
 
-    if (prsedcontactsFromLocal.length !== 0){
-      console.log('Take contact from LocalStorage');
-      console.log(prsedcontactsFromLocal);
+    if (prsedcontactsFromLocal.length > 0){
+      // console.log('Take contact from LocalStorage');
+      // console.log(prsedcontactsFromLocal);
       this.setState({contacts: prsedcontactsFromLocal})
     }
   }
 
   componentDidUpdate(prevPops, prevState){
-    console.log('Component Did Update');
+    // console.log('Component Did Update');
 
-    console.log(prevState.contacts);
+    // console.log(prevState.contacts);
 
-    console.log(this.state.contacts);
+    // console.log(this.state.contacts);
 
     if(this.state.contacts !== prevState.contacts){
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
